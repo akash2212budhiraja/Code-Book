@@ -3,17 +3,12 @@
 const mongoose = require("mongoose");
 require("dotenv").config();
 
-const database_name = "code_book";
-
 exports.dbConnect = () => {
-  const dbURI = "mongodb://localhost:27017/" + database_name;
+  const dbURI = process.env.MONGO_URI; // Use the MongoDB URI from .env
   console.log("Attempting to connect to:", dbURI);
 
   mongoose
-    .connect(dbURI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    })
+    .connect(dbURI)
     .then(() => {
       console.log("Db connected successfully");
     })
