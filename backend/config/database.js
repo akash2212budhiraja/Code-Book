@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 require("dotenv").config();
 
 exports.dbConnect = () => {
-  const dbURI = process.env.MONGO_URI; // Use the MongoDB URI from .env
+  const dbURI = "mongodb+srv://akashbudhiraja:akash10@akash.5mkly.mongodb.net/?retryWrites=true&w=majority&appName=akash"; // Use the MongoDB URI from .env
   console.log("Attempting to connect to:", dbURI);
 
   mongoose
